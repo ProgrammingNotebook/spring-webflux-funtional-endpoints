@@ -2,6 +2,7 @@ package com.programming.notebook.swfe.service;
 
 import org.springframework.stereotype.Service;
 
+import com.programming.notebook.swfe.exception.EmployeeNotFoundException;
 import com.programming.notebook.swfe.model.Employee;
 
 import reactor.core.publisher.Mono;
@@ -16,7 +17,7 @@ public class EmployeeService {
             case "E101" -> Mono.just(Employee.builder().id("E101").age(31).fullName("John").build());
             case "E102" -> Mono.just(Employee.builder().id("E102").age(32).fullName("Helen").build());
             case "E103" -> Mono.just(Employee.builder().id("E103").age(33).fullName("Smith").build());
-            default -> Mono.error(new RuntimeException("Employee not found"));
+            default -> Mono.error(new EmployeeNotFoundException("Employee with ID: " + id + " not found"));
         };
     }
 }
