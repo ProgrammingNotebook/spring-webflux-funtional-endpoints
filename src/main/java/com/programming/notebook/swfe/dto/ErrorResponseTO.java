@@ -17,14 +17,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class ErrorResponseTO {
-    
+
     // Indicates the overall outcome of the request (e.g., "error" or "success").
     private String status;
 
     // The HTTP status code associated with the error (e.g., 400, 404, 500).
     private HttpStatus statusCode;
 
-    // A unique, application-specific error code (e.g., "INVALID_INPUT", "RESOURCE_NOT_FOUND").
+    // A unique, application-specific error code (e.g., "INVALID_INPUT",
+    // "RESOURCE_NOT_FOUND").
     private ErrorCode code;
 
     // A brief, human-readable message describing the error.
@@ -39,6 +40,7 @@ public class ErrorResponseTO {
     // The URL path of the endpoint where the error occurred.
     private String path;
 
-    // Used to report multiple errors within a single response, especially in cases like validation failures.
+    // Used to report multiple errors within a single response, especially in cases
+    // like validation failures.
     private List<String> errors;
 }

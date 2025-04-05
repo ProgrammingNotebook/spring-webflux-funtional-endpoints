@@ -1,5 +1,11 @@
 package com.programming.notebook.swfe.router;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
+
+import java.time.ZonedDateTime;
+import java.util.UUID;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -11,12 +17,6 @@ import com.programming.notebook.swfe.dto.ErrorResponseTO;
 import com.programming.notebook.swfe.exception.EmployeeNotFoundException;
 import com.programming.notebook.swfe.handler.EmployeeRequestHandler;
 import com.programming.notebook.swfe.model.ErrorCode;
-
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
-
-import java.time.ZonedDateTime;
-import java.util.UUID;
 
 @Configuration
 public class EmployeeManagementRouter {

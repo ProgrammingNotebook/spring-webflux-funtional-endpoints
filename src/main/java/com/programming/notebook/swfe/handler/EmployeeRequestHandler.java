@@ -1,15 +1,11 @@
 package com.programming.notebook.swfe.handler;
 
-import org.springframework.boot.actuate.autoconfigure.metrics.MetricsProperties.Web.Server;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.BodyInserter;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import com.programming.notebook.swfe.model.Employee;
 import com.programming.notebook.swfe.service.EmployeeService;
 
 import lombok.RequiredArgsConstructor;
