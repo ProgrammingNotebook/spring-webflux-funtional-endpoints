@@ -42,5 +42,5 @@ public class ErrorResponseTO {
 
     // Used to report multiple errors within a single response, especially in cases
     // like validation failures.
-    private List<String> errors;
+    private List<ErrorDetailTO> errorDetails;
 }

@@ -18,18 +18,24 @@ import com.programming.notebook.swfe.exception.EmployeeNotFoundException;
 import com.programming.notebook.swfe.handler.EmployeeRequestHandler;
 import com.programming.notebook.swfe.model.ErrorCode;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 public class EmployeeManagementRouter {
 
         @Bean
         public RouterFunction<ServerResponse> employeeRouter(EmployeeRequestHandler employeeRequestHandler) {
 
+                log.info("Registering employee management router");
                 return RouterFunctions
                                 .route()
                                 .path("/api/v1", builder -> builder
                                                 .nest(accept(APPLICATION_JSON), routerBuilder -> routerBuilder
                                                                 .GET("/employee/{id}",
-                                                                                employeeRequestHandler::getEmployeeById)))
+                                                                                employeeRequestHandler::getEmployeeById)
+                                                                .POST("/employee/create",
+                                                                                employeeRequestHandler::createEmployee)))
                                 .onError(EmployeeNotFoundException.class, (exception, request) -> {
                                         return ServerResponse
                                                         .status(HttpStatus.NOT_FOUND)

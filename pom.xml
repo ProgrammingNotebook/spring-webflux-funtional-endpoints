@@ -37,8 +37,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency> <!-- Spring
-        Boot Starter Webflux -->
+        </dependency> <!-- Spring Boot Starter Webflux -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency> <!-- Spring Boot Starter Validation -->
 
         <!-- Third Party Dependencies -->
         <dependency>
